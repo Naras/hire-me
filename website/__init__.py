@@ -1,21 +1,25 @@
 from flask import Flask
 from flask_mail import Mail, Message
-from os import environ
+# from os import environ
+import os
+from dotenv import load_dotenv
 
 # from flask_migrate import Migrate
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_login import LoginManager
 
+load_dotenv()
+
 app = Flask(__name__)
-app.config["SECRET_KEY"] = environ.get("SECRET_KEY")
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
 app.config.update(dict(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=465,
     MAIL_USE_TLS=False,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME=environ.get("EMAIL"),
-    MAIL_PASSWORD=environ.get("EMAIL_PW")))
+    MAIL_USERNAME=os.getenv("EMAIL"),
+    MAIL_PASSWORD=os.getenv("EMAIL_PW")))
 
 mail = Mail(app)
 

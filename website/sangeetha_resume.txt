@@ -1,0 +1,71 @@
+Sangeetha Gomatam
+Contact
+    cell: (503) 537-8046
+    email: sangeethamg13@gmail.com
+
+Summary
+    I design enterprise security products that people can actually use. At Duo Security (Cisco), I’ve spent 6+ years working
+    on the most complex UX problems in IAM, including authentication flows, identity provisioning, and admin interfaces, for
+    a platform used by tens of thousands of enterprises worldwide. I work across research, product strategy, and UX to
+    simplify complex workflows and improve experiences for both IT admi
+
+Skills
+    Figma • FigJam • Sketch • React • JavaScript • HTML • CSS • Angular • Jira
+
+Sangeetha does not have the following skills
+    Kubernetes, Java, Scala, R, snowflake
+
+Sangeetha is a novice in the following skills
+    Java, C++
+
+Professional Experience
+
+Senior Prduct Designer, Duo Systems
+United States June 2021 – Present
+Identity Provisioning & SCIM
+• Led product design for user provisioning and outbound SCIM workflows within Duo’s identity platform, helping IT
+administrators automate user lifecycle management.
+• Shaped product direction through competitive analysis, story mapping, user journey mapping, and cross-functional
+collaboration.
+• Helped scale outbound provisioning features used by 570+ customers, supporting 181K+ users, 3.3K+ groups, and
+nearly 1,000 active integrations.
+• Mentored junior designers on the team by critique, and research synthesis, helping them develop their design voice
+in a complex, security-focused domain
+
+Duo Passport — Authentication Optimization
+• Led research and UX design for Duo Passport, a product focused on reducing repetitive MFA prompts and
+improving login experiences.
+. Simplified authentication workflows for 3,000+ users and reduced authentication prompts by up to 66%.
+. Worked with Product Management, Engineering and Sales to shape the product roadmap by creating user journey
+maps and prioritization frameworks.
+. Created product artifacts presented at RSA Conference to aid customer education and go-to-market initiatives.
+
+Self-Service Experience — End User Enablement
+• Led the vision and UX design for a centralized self-service platform, including password reset, and self-service
+portal experiences.
+• Conducted research with 15+ enterprises across 3 distinct personas to identify support bottlenecks impacting
+self-service adoption; Synthesized findings into a business case for stakeholder alignment.
+• Led discovery, prototyping, and testing for password reset and change workflows, improving experiences for both IT
+administrators and end users.
+• Helped define the future of self-service at Duo by redesigning navigation and improving application discoverability with categories and favoriting features.
+Duo Authentication Proxy — Admin Dashboard
+• Led product design for a centralized security administration dashboard enabling customers to manage multiple Duo
+Authentication Proxy deployments.
+• Addressed operational pain points affecting approximately 65% of Duo's customer base; designed a configuration
+management experience used by 1,000+ enterprise customers.
+• Reduced support tickets by over 50% through guided UX and improved information architecture for complex
+configuration workflows.
+Certifications
+    ...
+Education:
+    -University of Michigan Ann Arbor, MI
+        M.S. Information, Year graduated: 2020, (GPA: 4.2?)
+    -B.M.S College of Technology, Bangalore University, Bangalore
+        B.Tech. Computer Science, Year graduated: 2015, (GPA: 4.0)
+Awards and Associations:
+    ...
+References:
+    Tembo Systems, Bangalore:
+        Vivek Srivastava - +91 98454 71479
+    Duo Systems
+        ? - contact info

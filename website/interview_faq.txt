@@ -1,9 +1,9 @@
-How does Joel deal with pressure or stressful situations?:
+How do you deal with pressure or stressful situations?:
     I try to stay calm and focus on the bigger picture. In prolonged periods of stress I like to make sure I am getting enough exercise and sleep.
 
-Does Joel prefer working independently or on a team?:
+Do you prefer working independently or on a team?:
     I like to do hard technical work alone. I need the focus and quiet to think and be inspired. I like to work on project with a small team.
-    Big teams can get cumbersome where there is more effort put into organizing the team than doing the work. Working solo can be great
+    Big teams are good if the scope of the project is large. It needs more energy on communication and protocols than doing the work. Working solo can be great
     because you get to keep more flexible hours, and you can work on what is most important. One downside is that you don't get constructive
     criticism when working solo, so you need to make an effort to get feedback from stakeholders often.
 
@@ -14,27 +14,33 @@ When you’re balancing multiple projects, how do you keep yourself organized?:
     remain above the medium priority tasks on the project.
 
 Are you applying for other jobs?:
-    No. This is the only company I am willing to work at. I made this entire app just for you. If I can't work for you, then I'm retiring.
+    Yes. I'm looking for opportunities. In the UX Design and product design/development sector for Security and Identity software apps.
 
 Why do you want to work for this company?:
-    This is the best company in the world. It excites me when I read about all the interesting and powerful ways that you
-    provide a best-in-class experience for your customers as you strive to do your mission.
+    Sentry is looking for a Senior Product Designer who loves solving complex challenges and turning them into clear, intuitive experiences that help developers ship their best work.
+    At Sentry, you design tools that empower developers to build faster, more reliable software. Candidate collaborate closely with a senior team of product managers, engineers, and designers to create product experiences that set us apart.
+    A small but mighty team of product designers who care deeply about solving tough problems and have fun doing it. You take the work seriously, not ourselves.
 
-Why should I hire you?:
-    The same reason the Cavs drafted LeBron: You want to win win win.
+    This fits in so well with my skills, motives and work experience. I'm passionate about product design, focssed small team work, collaboration with large stake holders. 
+    I enjoy discusiing and understanding end users, product managers, engineeers, and designers. Have done this a lot at Duo Securities.
+
+Why should we hire you?:
+    You want experienced senior Product Designers. I am one. I want to be one of them with you.
+    You have tough, complex challenges. I love to get to solve them.
+    You like small ambitious teams. I like them too.
 
 What can you bring to a company?:
     I bring an encouraging and agreeable personality, a sense of humor, a willingness to help others succeed, and a desire
-    to engage in fierce competition.
+    to engage in stimulating, keep-on-my-toes, healthy competition.
 
 What are your greatest strengths?:
     I am a very fast study to applying new material.
 
 What are your weaknesses?:
-    Dark Chocolate. Plants for sale.
+    Dark Chocolate. Ice cream.
 
 What is your greatest professional achievement?:
-    Benchmarking and evaluating our cutting-edge AI noise suppression model on ARM chips.
+    Benchmarking and evaluating user experience and work flows
 
 Why are you leaving your current job?:
     Because I want to work for you.
@@ -52,16 +58,23 @@ How do you like to be managed?:
     applicable to other problems you may have.
 
 What other companies are you interviewing with?:
-    This is the only company I am willing to work at. I made this entire app just for you. If I can't work for you, then I'm retiring.
+    Organisations with profiles similar to you.
 
 When can you start?:
-    Today
+    In a week
 
 Are you willing to relocate?:
     Yes - for the right opportunity, I am willing to relocate.
 
 Sell me this pen:
     Actually, I will sell you this pen https://www.amazon.com/Japanese-High-End-Retractable-Journaling-Supplies/dp/B0B45RTFQH/ref=sr_1_6?keywords=pen&sr=8-6
+
+Show me your IAM and authentication work:
+    At Duo, I
+    • Led product design for a centralized security administration dashboard enabling customers to manage multiple Duo Authentication Proxy deployments.
+    • Addressed operational pain points affecting approximately 65% of Duo's customer base; designed a configuration
+    management experience used by 1,000+ enterprise customers.
+    • Reduced support tickets by over 50% through guided UX and improved information architecture for complex configuration workflows.
 
 
 

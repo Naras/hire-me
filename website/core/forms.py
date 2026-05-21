@@ -13,3 +13,7 @@ class EmailForm(FlaskForm):
     subject = StringField("Subject", validators=[DataRequired()])
     body = TextAreaField("Message", validators=[DataRequired()])
     submit = SubmitField("Send")
+
+class JobURLForm(FlaskForm):
+    url = StringField("Job Description URL", validators=[DataRequired()])
+    submit = SubmitField("Pitch Me")

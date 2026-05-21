@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint, flash, send_from_directory, session, url_for
-from .forms import QuestionForm, EmailForm
-from ..ai_service.ai_answers import string_answer
+from .forms import QuestionForm, EmailForm, JobURLForm
+from ..ai_service.ai_answers import string_answer, generate_pitch_for_job
 from .. import mail, Message
 
 core = Blueprint("core", __name__)
@@ -15,16 +15,12 @@ def session_init() -> None:
     # initialize new session variables
     resume_link = url_for("core.download_resume")
     about_link = url_for("core.about")
-    github_link = "https://github.com/joelsprunger/personal-website"
-    garden_link = "https://www.instagram.com/portlandgarden/"
+    github_link = "https://github.com/jnaras/"
+    garden_link = "https://www.instagram.com/sangeethamg/"
     session["html_links"] = {
-            "Joel's resume": f'<a href={resume_link} target="_blank">Joel''s resume</a>',
+            "Sangeetha's resume": f'<a href={resume_link} target="_blank">Sangeetha''s resume</a>',
             "About this app": f'<a href={about_link}>About</a>',
-            "GitHub": f'<a href={github_link} target="_blank">GitHub</a>',
-            "Gardening": f'<a href={garden_link} target="_blank">Gardening</a>',
-            "gardening": f'<a href={garden_link} target="_blank">gardening</a>',
-            "Garden": f'<a href={garden_link} target="_blank">Garden</a>',
-            "garden": f'<a href={garden_link} target="_blank">garden</a>'}
+            "GitHub": f'<a href={github_link} target="_blank">GitHub</a>'}
 
     if "questions" not in session.keys():
         session["questions"]: dict = {}
@@ -39,13 +35,16 @@ def index():
         session_init()
     form = QuestionForm()
     email_form = EmailForm()
+    job_form = JobURLForm()
+    pitch_answers = None
+    
     if session["questions"]:
         question = session["qa_list"][-1][0]  # Use most recent question
     else:
         question = "Question"  # Use initial prompt
 
     # process Q/A form
-    if form.validate_on_submit():
+    if form.submit.data and form.validate():
         question = form.question.data
         form.question.data = None  # clear form so that placeholder question is shown
         # check for repeated question
@@ -63,17 +62,24 @@ def index():
         session["qa_list"].append((question, answer))
 
     # process Email form
-    if email_form.validate_on_submit():
-        msg = Message(email_form.subject.data, sender='sprunger.joel@gmail.com', recipients=[email_form.email.data])
+    if email_form.submit.data and email_form.validate():
+        msg = Message(email_form.subject.data, sender='sangeethamg13@gmail.com', recipients=[email_form.email.data])
         msg.body = email_form.body.data
         mail.send(msg)
+        
+    # process JobURL form
+    if job_form.submit.data and job_form.validate():
+        pitch_answers = generate_pitch_for_job(job_form.url.data)
+        job_form.url.data = None
 
     return render_template("index.html",
                            form=form,
                            qa=session["qa_list"],
                            question=question,
                            n_questions=len(session["qa_list"]),
-                           email_form=email_form)
+                           email_form=email_form,
+                           job_form=job_form,
+                           pitch_answers=pitch_answers)
 
 
 @core.route("/about")
@@ -84,4 +90,4 @@ def about():
 @core.route('/download')
 def download_resume():
     path = "static/"
-    return send_from_directory(path, "sprunger_resume.pdf")
+    return send_from_directory(path, "sangeetha_resume.pdf")

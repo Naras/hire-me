@@ -6,7 +6,7 @@
 
 <div class="h-100 p-5 bg-body-tertiary border rounded-3">
   <div class="container-fluid py-5">
-    <h1>Interview Joel</h1>
+    <h1>Interview Sangeetha</h1>
       <form method="POST">
         {{ form.hidden_tag() }}
         <label for="question1" class="form-label">Ask me questions about my background</label>
@@ -51,6 +51,37 @@
   </div>
 </div>
 
+<div class="h-100 p-5 bg-body-tertiary border rounded-3 mt-4">
+  <div class="container-fluid py-3">
+    <h2>Pitch Me for a Job</h2>
+    <p>Provide a job description URL and I will generate a custom pitch.</p>
+    <form method="POST">
+      {{ job_form.hidden_tag() }}
+      <div class="input-group mb-3">
+        {{ job_form.url(class="form-control", placeholder="https://example.com/careers/job-123") }}
+        {{ job_form.submit(class="btn btn-outline-primary") }}
+      </div>
+    </form>
+    
+    {% if pitch_answers %}
+      {% if pitch_answers.error %}
+        <div class="alert alert-danger">{{ pitch_answers.error }}</div>
+      {% else %}
+        <div class="mt-4 p-4 bg-white border rounded">
+          <h4 class="text-primary">Why should we hire you?</h4>
+          <p>{{ pitch_answers.hire_you }}</p>
+          
+          <h4 class="text-primary mt-4">Why do you want to work here?</h4>
+          <p>{{ pitch_answers.want_to_work }}</p>
+          
+          <h4 class="text-primary mt-4">What can you bring to the table?</h4>
+          <p>{{ pitch_answers.bring_to_table }}</p>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
 <div id=myModal class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -74,7 +105,7 @@
   </div>
   <div class="offcanvas-body">
     <div>
-      Contact Joel to set up a real interview
+      Contact Sangeetha to set up a real interview
       <form method="POST">
         <div class="mb-3">
         {{ email_form.hidden_tag() }}
