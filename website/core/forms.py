@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField
+from wtforms import StringField, TextAreaField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Email
 
 
@@ -16,4 +16,5 @@ class EmailForm(FlaskForm):
 
 class JobURLForm(FlaskForm):
     url = StringField("Job Description URL", validators=[DataRequired()])
+    require_h1b = BooleanField("Require H1B Sponsorship?")
     submit = SubmitField("Pitch Me")

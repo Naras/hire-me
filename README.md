@@ -1,10 +1,7 @@
 # Welcome to hire-me: an AI powered virtual interview
 In this web-app I use an LLM to answer questions about my personal and professional background. The answers provide links to my resume, projects, and hobbies. If you like this app feel free to use my code to make one for yourself.
 
-<img width="1131" alt="Screen Shot 2023-05-15 at 9 26 17 PM" src="https://github.com/joelsprunger/hire-me/assets/43421397/3c47ad5d-6160-471e-b42e-2b520ac5f3ad">
-
-
-[LIVE DEMO](https://hire-joel.com)
+<img width="1131" alt="Portrait" src="website/static/portrait.png">
 
 ## Design
 ### Frontend
@@ -19,7 +16,7 @@ Open AI api and Lang Chain are used for answering questions only using informati
 
 ## Getting started
 ### Code Setup
-1) Python 3.9 (I used a virtual environment with 3.9.5) 
+1) Python 3.11 (I used a virtual environment with 3.11.0) 
 2) Fork this repo and clone it.
 3) pip install requirements.txt
 4) Change out my resume for yours.
@@ -37,10 +34,6 @@ sources and long sources.
 To run and debug locally run app.py this will produce an ip address/link to the app running locally
 
 ### Deployment
-I deployed this using GCP Cloud Run. This keeps the app on an archived Docker image that can be run when/as needed. This means I don't have to continueously rent GCP resources.
-1) First I followed the [quickstart](https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service) to deploy a python service using cloud run. In this you will use google CLI to build and deploy the service to cloud run.
-   1) You will need to set the environment variables on GCP for your project
-2) Next I followed the [quickstart](https://cloud.google.com/run/docs/quickstarts/deploy-continuously#cloudrun_deploy_continuous_code-python) to continuously deploy from a git repository. This will re-deploy every time a new revision pushed to github. I followed this guide except that I selected docker image rather than google build packs. (This code will not work with google build packs in it's current form and you will need to look at the proper templates for python if you want to use google build packs.)
-This provides more flexibility if I were to switch hosting services, and if there are any errors in deployment it allows me to build and run the docker image locally for debugging.
+Either copy the entire project to a Linux server (like lighsail, ec2) or build a docker image and use it directly. The .env file has to be created with proper values, similar to .env-example 
 
 
