@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, BooleanField
+from wtforms import StringField, TextAreaField, SubmitField, BooleanField, SelectMultipleField
 from wtforms.validators import DataRequired, Email
 
 
@@ -16,5 +16,17 @@ class EmailForm(FlaskForm):
 
 class JobURLForm(FlaskForm):
     url = StringField("Job Description URL", validators=[DataRequired()])
+    regions = SelectMultipleField(
+        "Target regions",
+        choices=[
+            ("us", "United States"),
+            ("canada", "Canada"),
+            ("australia", "Australia"),
+            ("new_zealand", "New Zealand"),
+            ("uk", "United Kingdom"),
+            ("europe_english", "Non-English speaking Europe, English-only roles"),
+        ],
+        default=["us"],
+    )
     require_h1b = BooleanField("Require H1B Sponsorship?")
     submit = SubmitField("Pitch Me")

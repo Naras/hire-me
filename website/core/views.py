@@ -69,7 +69,11 @@ def index():
         
     # process JobURL form
     if job_form.submit.data and job_form.validate():
-        pitch_answers = generate_pitch_for_job(job_form.url.data, job_form.require_h1b.data)
+        pitch_answers = generate_pitch_for_job(
+            job_form.url.data,
+            selected_regions=job_form.regions.data,
+            require_h1b=job_form.require_h1b.data,
+        )
         job_form.url.data = None
 
     return render_template("index.html",

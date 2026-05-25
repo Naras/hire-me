@@ -61,6 +61,10 @@
         {{ job_form.url(class="form-control", placeholder="https://example.com/careers/job-123") }}
         {{ job_form.submit(class="btn btn-outline-primary") }}
       </div>
+      <div class="mb-3">
+        {{ job_form.regions.label(class="form-label") }}
+        {{ job_form.regions(class="form-select", size="6") }}
+      </div>
       <div class="form-check mb-3">
         {{ job_form.require_h1b(class="form-check-input") }}
         {{ job_form.require_h1b.label(class="form-check-label") }}
@@ -69,7 +73,7 @@
     
     {% if pitch_answers %}
       {% if pitch_answers.error %}
-        <div class="alert alert-danger">{{ pitch_answers.error }}</div>
+        <div class="alert alert-danger">{{ pitch_answers.error }} / {{pitch_answers.details}}</div>
       {% else %}
         <div class="mt-4 p-4 bg-white border rounded">
           <h4 class="text-primary">Why should we hire you?</h4>
@@ -83,25 +87,33 @@
           
           {% if pitch_answers.target_companies %}
           <h4 class="text-primary mt-5 border-top pt-4">Recommended Target Companies</h4>
-          <p class="text-muted">Based on your background and the seed role, here are some target companies and their estimated H1B sponsorship likelihood.</p>
+          <p class="text-muted">Based on your background and the seed role, here are some target companies across your selected regions.</p>
           <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
             {% for company in pitch_answers.target_companies %}
             <div class="col">
               <div class="card h-100 shadow-sm border-0 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title d-flex justify-content-between align-items-center">
+                  {% set hiring_signal = company.hiring_signal or company.h1b_score %}
+                  <h5 class="card-title d-flex justify-content-between gap-2 align-items-start">
                     {{ company.company_name }}
-                    {% if company.h1b_score == 'Known' %}
-                      <span class="badge bg-success">Known H1B</span>
-                    {% elif company.h1b_score == 'Likely' %}
-                      <span class="badge bg-primary">Likely H1B</span>
-                    {% elif company.h1b_score == 'Possible' %}
-                      <span class="badge bg-warning text-dark">Possible H1B</span>
-                    {% else %}
-                      <span class="badge bg-secondary">Unlikely H1B</span>
+                    {% if company.region %}
+                      <span class="badge bg-info text-dark">{{ company.region }}</span>
                     {% endif %}
                   </h5>
                   <h6 class="card-subtitle mb-2 text-muted">{{ company.role }}</h6>
+                  {% if hiring_signal %}
+                    {% if hiring_signal in ['Known H1B', 'Known'] %}
+                      <span class="badge bg-success mb-2">Known H1B</span>
+                    {% elif hiring_signal in ['Likely H1B', 'Likely'] %}
+                      <span class="badge bg-primary mb-2">Likely H1B</span>
+                    {% elif hiring_signal in ['Possible H1B', 'Possible'] %}
+                      <span class="badge bg-warning text-dark mb-2">Possible H1B</span>
+                    {% elif hiring_signal in ['Unlikely H1B', 'Unlikely'] %}
+                      <span class="badge bg-secondary mb-2">Unlikely H1B</span>
+                    {% else %}
+                      <p class="small text-muted mb-2">{{ hiring_signal }}</p>
+                    {% endif %}
+                  {% endif %}
                   <p class="card-text small">{{ company.reason }}</p>
                 </div>
               </div>
