@@ -73,6 +73,7 @@ def index():
             job_form.url.data,
             selected_regions=job_form.regions.data,
             require_h1b=job_form.require_h1b.data,
+            always_prompt=job_form.always_prompt.data,
         )
         job_form.url.data = None
 

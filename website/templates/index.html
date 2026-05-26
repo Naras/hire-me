@@ -69,6 +69,10 @@
         {{ job_form.require_h1b(class="form-check-input") }}
         {{ job_form.require_h1b.label(class="form-check-label") }}
       </div>
+      <div class="form-check mb-3">
+        {{ job_form.always_prompt(class="form-check-input") }}
+        {{ job_form.always_prompt.label(class="form-check-label") }}
+      </div>
     </form>
     
     {% if pitch_answers %}

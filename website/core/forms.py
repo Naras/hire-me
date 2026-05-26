@@ -29,4 +29,5 @@ class JobURLForm(FlaskForm):
         default=["us"],
     )
     require_h1b = BooleanField("Require H1B Sponsorship?")
+    always_prompt = BooleanField("Always Prompt for New Results?")
     submit = SubmitField("Pitch Me")
